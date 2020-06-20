@@ -1,0 +1,31 @@
+{
+  "name": "thebeststore",
+  "version": "1.0.0-BETA",
+  "description": "Frontend para pequeno API de Engenharia Web I.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beokabe/thebeststore.git"
+  },
+  "keywords": [
+    "loja",
+    "produtos",
+    "eletronicos",
+    "the",
+    "best"
+  ],
+  "author": "Beatriz Carolina Okabe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beokabe/thebeststore/issues"
+  },
+  "homepage": "https://github.com/beokabe/thebeststore#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^1.9.1",
+    "popper.js": "^1.16.1"
+  }
+}

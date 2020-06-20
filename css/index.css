@@ -1,0 +1,115 @@
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 37px;
+}
+
+ul li {
+    list-style: none;
+}
+
+#verifica-produtos {
+    display: none;
+    font-weight: bold;
+    text-align: center;
+    margin: 108.5px 0;
+}
+
+.filtro {
+    width: 95%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    background-color: transparent;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.filtro-btn {
+    transition: filter cubic-bezier(0, 1.6, 1, -0.47);
+    cursor: pointer;
+}
+
+.produtos {
+    width: 90%;
+    margin: 15px auto auto;
+    display: grid;
+}
+
+.card {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 36px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.produto-nome, .produto-categoria {
+    text-transform: capitalize;
+}
+
+.card .produto-descricao {
+    width: 100%;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.card .produto-quantidade {
+    display: none;
+}
+
+.card .produto-preco {
+    color: #388E3C;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.produto-botao {
+    max-width: -webkit-fill-available;
+    background: #56709D;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 35px;
+    cursor: pointer;
+    font-family: 'Pacifico', cursive;
+    position: relative;
+    transition: filter cubic-bezier(0, 1.6, 1, -0.47);
+    padding: 10px;
+    width: 100%;
+}
+
+.produto-botao:hover,
+.filtro-btn:hover {
+    filter: opacity(0.7);
+}
+
+@media screen and (min-width: 846px) {
+    .filtro {
+        text-align: right;
+    }
+    .produto-card-group {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+    .card {
+        width: 14% / 90%;
+        margin: 0;
+    }
+
+    .card .produto-descricao {
+        width: 90%;
+        padding: 0px 5px;
+    }
+}

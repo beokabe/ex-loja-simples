@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categorias</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="../node_modules/jquery/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/managerStyle.css">
+    <link href='../css/commons/header.css' rel='stylesheet' type='text/css'>
+    <link href='../css/commons/footer.css' rel='stylesheet' type='text/css'>
+
+    <script type="module" src="../javascript/controllers/categorias.js"></script>
+    <script type="module" src="../javascript/manager.js"></script>
+
+</head>
+
+<body>
+
+<header class="top-header clearfix">
+    <div class="maxwidth">
+        <h1 title="Arduino Store">The Arduino Store</h1>
+
+        <nav class="top-nav">
+            <ul>
+                <li title="Página do cliente"> <a href="../index.html">Home</a></li>
+                <li title="Página para cadastro de produtos"> <a href="produtosManager.html">Produtos</a></li>
+                <li title="Página para cadastro de produtos"> <a href="#">Categorias</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Gerenciador de Categorias</h2></div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo de Categoria</th>
+                    <th>Nome</th>
+                    <th>Descricao</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="footer-menushare">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Google Plus</a></a>
+        </li>
+    </ul>
+
+    <p>Copyright The Arduino Store</p>
+    <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+    </p>
+</footer>
+</body>
+
+</html>
