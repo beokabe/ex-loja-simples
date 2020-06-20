@@ -40,37 +40,33 @@ $(document).ready(function () {
 
     $(document).on("click", ".add", function () {
         let empty = false;
-        let input = $(this).parents("tr").find('input[type="text"]:not(#id)');
-        input.each(function () {
-            if (!$(this).val()) {
+        let input;
+        this.parentNode.parentElement.firstElementChild.firstElementChild.hasAttribute('disabled') ?
+            input = $(this).parents("tr").find('input[type="text"]:not(#id)') :
+            input = $(this).parents("tr").find('input[type="text"]');
+
+        input.each(function(){
+            if(!$(this).val()){
                 $(this).addClass("error");
                 empty = true;
-            } else {
+            } else{
                 $(this).removeClass("error");
             }
         });
         $(this).parents("tr").find(".error").first().focus();
-        if (!empty) {
-            input.each(function () {
+        if(!empty){
+            input.each(function(){
                 $(this).parent("td").html($(this).val());
             });
-            $(this).parents("tr").find(".add, .edit").toggle();
-            $(".add-new").removeAttr("disabled");
+            adicionarItem(this);
+            setInterval(location.reload(), 100);
         }
-
-
     });
 
-    $(document).on("click", ".add", function () {
-        let inputId = this.parentNode.parentElement.firstElementChild.firstElementChild;
-
-        if(inputId !== null) {
-            tipo.post(this);
-        } else {
-            tipo.put(this);
-        }
-
-    });
+    function adicionarItem(item) {
+        let inputId = item.parentNode.parentElement.firstElementChild.firstElementChild;
+        inputId !== null ? tipo.post(item) : tipo.put(item);
+    }
 
     $(document).on("click", ".edit", function () {
         $(this).parents("tr").find("td:not(:last-child)").each(function () {

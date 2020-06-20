@@ -1,4 +1,4 @@
-const URL = 'http://localhost:8081/albus/produto';
+const URL = 'http://localhost:8081/albus/produto/';
 
 init();
 
@@ -43,18 +43,20 @@ function getṔrodutosNaLoja() {
                     let botaoCompra = document.createElement("div");
 
                     divCard.classList.add("card");
-                    paragrafoId.classList.add("produto-id");
+                    imagemProduto.classList.add('produto-img')
+                    paragrafoId.classList.add("produto-id", "hidden");
                     divProdutoNome.classList.add("produto-nome");
                     divProdutoCategoria.classList.add("produto-categoria");
                     divProdutoQuantidade.classList.add("produto-quantidade");
                     divProdutoDescricao.classList.add("produto-descricao");
                     divProdutoPreco.classList.add("produto-preco");
+
                     botaoCompra.classList.add("produto-botao");
 
                     paragrafoId.textContent = response.data[i].id;
                     h3Nome.textContent = response.data[i].nome;
                     h4Categoria.textContent = response.data[i].categoria.nome;
-                    h4Quantidade.textContent = response.data[i].quantidade;
+                    h4Quantidade.textContent = "Disponível: " + response.data[i].quantidade;
                     paragrafoDescricao.textContent = response.data[i].descricao;
                     imagemProduto.src = response.data[i].urlImg;
 
@@ -94,6 +96,27 @@ function getṔrodutosNaLoja() {
         });
 }
 
-function comprarProduto(elementoCapturado) {
+function comprarProduto() {
 
+    if (confirm("Tem certeza que deseja comprar este produto?")) {
+
+        var _id = document.querySelector('.produto-id').textContent;
+        var produto = getProduto(this);
+
+        axios.put(URL + _id, produto);
+
+    }
+}
+
+function getProduto(produto) {
+
+    var produto = {
+        id: this.document.querySelector('.produto-id').textContent,
+        nome: this.document.querySelector('.produto-nome').firstElementChild.textContent,
+        categoria: this.document.querySelector('.produto-categoria').firstElementChild.textContent,
+        quantidade: this.document.querySelector('.produto-quantidade').firstElementChild.textContent,
+        descricao: this.document.querySelector('.produto-descricao').firstElementChild.textContent,
+        valorDeVenda: this.document.querySelector('.produto-preco').firstElementChild.textContent,
+        urlImg: this.document.querySelector('.produto-img').firstElementChild.textContent,
+    }
 }

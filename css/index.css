@@ -46,8 +46,12 @@ ul li {
     margin-bottom: 36px;
 }
 
+.card .hidden {
+    display: none;
+}
+
 .card img {
-    width: 100%;
+    max-width: 100%;
 }
 
 .produto-nome, .produto-categoria {
@@ -58,10 +62,6 @@ ul li {
     width: 100%;
     text-align: justify;
     letter-spacing: 1px;
-}
-
-.card .produto-quantidade {
-    display: none;
 }
 
 .card .produto-preco {
