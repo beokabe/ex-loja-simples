@@ -1,4 +1,5 @@
-const URL = 'http://localhost:8081/albus/produto/';
+//const URL = 'http://localhost:8081/albus/produto/';
+const URL = 'http://192.168.2.106:8081/albus/produto/'
 
 var gerarTabela = function (response) {
 

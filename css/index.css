@@ -70,8 +70,7 @@ ul li {
     font-weight: bolder;
 }
 
-.produto-botao {
-    max-width: -webkit-fill-available;
+.produto-botao, .botao {
     background: #56709D;
     border: 0;
     border-radius: 5px;
@@ -80,15 +79,21 @@ ul li {
     text-align: center;
     text-decoration: none;
     font-size: 17px;
-    line-height: 35px;
     cursor: pointer;
     font-family: 'Pacifico', cursive;
     position: relative;
     transition: filter cubic-bezier(0, 1.6, 1, -0.47);
-    padding: 10px;
-    width: 100%;
+    padding: 6px;
 }
 
+.produto-botao {
+    max-width: -webkit-fill-available;
+    width: 100%;
+    line-height: 35px;
+    padding: 10px;
+}
+
+.botao:hover,
 .produto-botao:hover,
 .filtro-btn:hover {
     filter: opacity(0.7);
