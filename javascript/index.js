@@ -1,16 +1,14 @@
 //const URL = 'http://localhost:8081/albus/produto/';
-let URL = 'http://192.168.2.106:8081/albus/produto/'
-var PRODUTO = new Array(1);
-
+const URL = 'http://192.168.2.106:8081/albus/produto/'
 init();
 
 function init() {
     getṔrodutosNaLoja();
 }
 
-function getṔrodutosNaLoja() {
+async function getṔrodutosNaLoja() {
 
-    axios.get(URL)
+     axios.get(URL)
         .then(function (response) {
 
             if (!response.data.length) {
@@ -21,7 +19,7 @@ function getṔrodutosNaLoja() {
             var urlSearch = window.location.search.split("=")[1];
 
             for (let i = 0; i < response.data.length; i++) {
-                if ((urlSearch === '' || urlSearch === undefined) &&
+                if ((urlSearch === '' || urlSearch === undefined) || urlSearch.length > 20 &&
                     response.data[i].quantidade > 0) {
                     geraProdutoLoja(response, i)
                 } else {
